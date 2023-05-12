@@ -1,6 +1,6 @@
-# project_2
+# Blog Club
 
-A new Flutter project.
+In this project, I have implemented an advanced user interface
 
 ## Getting Started
 
