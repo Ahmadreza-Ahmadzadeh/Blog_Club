@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:project_2/auth.dart';
 import 'package:project_2/data.dart';
 import 'package:project_2/gen/assets.gen.dart';
-import 'package:project_2/home.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBordingScreen extends StatefulWidget {

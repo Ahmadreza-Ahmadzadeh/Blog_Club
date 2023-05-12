@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:project_2/Laya.dart';
 import 'package:project_2/gen/assets.gen.dart';
-import 'package:project_2/heart.dart';
-import 'package:project_2/home.dart';
 import 'package:project_2/onboarding.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -20,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(seconds: 2)).then(
       (value) {
         Navigator.of(context).pushReplacement(
-            CupertinoPageRoute(builder: (context) =>  OnBordingScreen()));
+            CupertinoPageRoute(builder: (context) => OnBordingScreen()));
       },
     );
   }

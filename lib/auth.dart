@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_2/Laya.dart';
 import 'package:project_2/gen/assets.gen.dart';
-import 'package:project_2/home.dart';
 import 'package:project_2/main.dart';
-import 'package:project_2/splash.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -158,20 +155,12 @@ class _LoginState extends State<_Login> {
               _controllerUserName.text.isNotEmpty
                   ? validateUsername = true
                   : validateUsername = false;
-              if (validateUsername && _controllerUserName.text != 'l@ya') {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) => const MainScreen(),
-                  ),
-                );
-              }
-              if (validateUsername && _controllerUserName.text == 'l@ya') {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) => LayaScreen(),
-                  ),
-                );
-              }
+
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => const MainScreen(),
+                ),
+              );
             });
           },
           style: ButtonStyle(
@@ -308,50 +297,20 @@ class _SignUpState extends State<_SignUp> {
                     ? validatepass = true
                     : validatepass = false;
 
-                if (validateUsername &&
-                    valdateFullname &&
-                    valdatePassword &&
-                    _controllerFullName.text != 'l@ya') {
+                if (validateUsername && valdateFullname && valdatePassword) {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (context) => const MainScreen(),
                     ),
                   );
                 } else {
-                  if (validateUsername &&
-                      valdateFullname &&
-                      valdatePassword &&
-                      _controllerUsername.text != 'l@ya') {
+                  if (validateUsername && valdateFullname && valdatePassword) {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) => const MainScreen(),
                       ),
                     );
-                  } else {
-                    if (validateUsername &&
-                        valdateFullname &&
-                        valdatePassword &&
-                        _controllerUsername.text == 'l@ya') {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => LayaScreen(),
-                        ),
-                      );
-                    }
-                    else {
-                    if (validateUsername &&
-                        valdateFullname &&
-                        valdatePassword &&
-                        _controllerFullName.text == 'l@ya') {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => MainScreen(),
-                        ),
-                      );
-                    }
                   }
-                  }
-                  
                 }
               },
             );

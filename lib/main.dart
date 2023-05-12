@@ -157,11 +157,15 @@ class _MainScreenState extends State<MainScreen> {
               child: IndexedStack(
                 index: selectedScreenIndex,
                 children: [
-                  _navigator(_homekey,homeIndex,HomeScreen()),
-                  _navigator(_articlekey,articleIndex,ArticleScreen()),
-                  _navigator(_searchkey,searchIndex,SimpleScreen(tabName:  'Search',)),
-                  _navigator(_menukey,menuIndedx,ProfileScreen()),
-                  
+                  _navigator(_homekey, homeIndex, HomeScreen()),
+                  _navigator(_articlekey, articleIndex, ArticleScreen()),
+                  _navigator(
+                      _searchkey,
+                      searchIndex,
+                      SimpleScreen(
+                        tabName: 'Search',
+                      )),
+                  _navigator(_menukey, menuIndedx, ProfileScreen()),
                 ],
               ),
             ),
@@ -188,22 +192,23 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-  Widget _navigator(GlobalKey key,int index , Widget child) {
-    return key.currentState==null && selectedScreenIndex!=index?Container(): Navigator(
-                  key: key,
-                  onGenerateRoute: ((settings) => MaterialPageRoute(
-                        builder: (context) =>
-                            Offstage(offstage: selectedScreenIndex!=index , child: child),
-                      )),
-                );
+  Widget _navigator(GlobalKey key, int index, Widget child) {
+    return key.currentState == null && selectedScreenIndex != index
+        ? Container()
+        : Navigator(
+            key: key,
+            onGenerateRoute: ((settings) => MaterialPageRoute(
+                  builder: (context) => Offstage(
+                      offstage: selectedScreenIndex != index, child: child),
+                )),
+          );
   }
 }
 
-
 class SimpleScreen extends StatelessWidget {
-  const SimpleScreen({super.key, required this.tabName, this.screenNumber=1});
-final String tabName;
-final   int screenNumber ;
+  const SimpleScreen({super.key, required this.tabName, this.screenNumber = 1});
+  final String tabName;
+  final int screenNumber;
 
   @override
   Widget build(BuildContext context) {
@@ -219,7 +224,10 @@ final   int screenNumber ;
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: ((context) => SimpleScreen(tabName: tabName,screenNumber: screenNumber+1,)),
+                builder: ((context) => SimpleScreen(
+                      tabName: tabName,
+                      screenNumber: screenNumber + 1,
+                    )),
               ),
             );
           },

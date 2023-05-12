@@ -41,8 +41,8 @@ class ProfileScreen extends StatelessWidget {
                       boxShadow: [
                         BoxShadow(
                           blurRadius: 20,
-                          color:
-                              themeData.colorScheme.onBackground.withOpacity(0.1),
+                          color: themeData.colorScheme.onBackground
+                              .withOpacity(0.1),
                         ),
                       ],
                     ),
@@ -88,7 +88,8 @@ class ProfileScreen extends StatelessWidget {
                                           .textTheme
                                           .bodyText1!
                                           .apply(
-                                              color: themeData.colorScheme.primary),
+                                              color: themeData
+                                                  .colorScheme.primary),
                                     ),
                                   ],
                                 ),
@@ -124,8 +125,8 @@ class ProfileScreen extends StatelessWidget {
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 30,
-                            color:
-                                themeData.colorScheme.onBackground.withOpacity(0.8),
+                            color: themeData.colorScheme.onBackground
+                                .withOpacity(0.8),
                           ),
                         ],
                       ),
@@ -165,9 +166,11 @@ class ProfileScreen extends StatelessWidget {
                                   ),
                                   Text(
                                     'Post',
-                                    style: themeData.textTheme.bodyText1!.copyWith(
-                                        fontWeight: FontWeight.w200,
-                                        color: themeData.colorScheme.onPrimary),
+                                    style: themeData.textTheme.bodyText1!
+                                        .copyWith(
+                                            fontWeight: FontWeight.w200,
+                                            color: themeData
+                                                .colorScheme.onPrimary),
                                   )
                                 ],
                               ),
@@ -190,9 +193,11 @@ class ProfileScreen extends StatelessWidget {
                                 ),
                                 Text(
                                   'Following',
-                                  style: themeData.textTheme.bodyText1!.copyWith(
-                                      fontWeight: FontWeight.w200,
-                                      color: themeData.colorScheme.onPrimary),
+                                  style: themeData.textTheme.bodyText1!
+                                      .copyWith(
+                                          fontWeight: FontWeight.w200,
+                                          color:
+                                              themeData.colorScheme.onPrimary),
                                 ),
                               ],
                             ),
@@ -214,9 +219,11 @@ class ProfileScreen extends StatelessWidget {
                                 ),
                                 Text(
                                   'Followers',
-                                  style: themeData.textTheme.bodyText1!.copyWith(
-                                      fontWeight: FontWeight.w200,
-                                      color: themeData.colorScheme.onPrimary),
+                                  style: themeData.textTheme.bodyText1!
+                                      .copyWith(
+                                          fontWeight: FontWeight.w200,
+                                          color:
+                                              themeData.colorScheme.onPrimary),
                                 )
                               ],
                             ),
@@ -269,12 +276,11 @@ class ProfileScreen extends StatelessWidget {
                                 onPressed: () {},
                                 icon: Assets.img.icons.table.svg(),
                               )
-        
                             ],
                           ),
                         ),
-                        for(var i=0 ; i<posts.length;i++)
-                        Post(post: posts[i])
+                        for (var i = 0; i < posts.length; i++)
+                          Post(post: posts[i])
                       ],
                     ),
                   ),

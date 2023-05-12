@@ -1,7 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:project_2/atricle.dart';
 import 'package:project_2/carousel/carousel_slider.dart';
 import 'package:project_2/gen/assets.gen.dart';
 import 'package:project_2/gen/fonts.gen.dart';
@@ -329,8 +328,10 @@ class Post extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => SimpleScreen(tabName: 'Home',))),
+      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => SimpleScreen(
+                tabName: 'Home',
+              ))),
       child: Container(
         margin: const EdgeInsets.fromLTRB(32, 8, 32, 8),
         decoration: BoxDecoration(
